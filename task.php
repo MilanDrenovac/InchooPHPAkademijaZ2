@@ -51,8 +51,11 @@ for($i=0;$i<$size;$i++){
             ++$n;
         if($map[$n] === 1){
             $checker=$n;
+            echo "<td>", $checker,"</td>";
         }
-        echo "<td>", $checker,"</td>";
+        else {
+            echo "<td>","</td>";
+        }
 
     }
     echo "<tr>";
