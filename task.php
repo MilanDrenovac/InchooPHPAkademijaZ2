@@ -10,8 +10,12 @@ $seperated = explode (",", $num);
 foreach($seperated as $n){
     if ($n % 2 == 0){
         $even[] = $n;
+        $map[$n] = 1;
     }
 }
+echo '<hr />';
+print_r($map);
+echo '<hr />';
 
 sort($even);
 print_r($even);
@@ -39,11 +43,17 @@ echo $size;
 
 echo '<hr />';
 
+$n=0;
 echo "<table><tr></tr>";
 for($i=0;$i<$size;$i++){
     echo "<tr>";
     for($j=0;$j<$size;$j++){
-        echo "<td>{$j}</td>";
+            ++$n;
+        if($map[$n] === 1){
+            $checker=$n;
+        }
+        echo "<td>", $checker,"</td>";
+
     }
     echo "<tr>";
 }
