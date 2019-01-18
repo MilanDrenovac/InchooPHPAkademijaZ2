@@ -1,4 +1,13 @@
-<link rel="stylesheet" href="style.css">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Homework 2</title>
+</head>
+<body>
 <?php
 
 //Seperating array into just numbers
@@ -13,56 +22,58 @@ foreach($seperated as $n){
         $map[$n] = 1;
     }
 }
-echo '<hr />';
-print_r($map);
-echo '<hr />';
+//echo '<hr />';
+//print_r($map);
+//echo '<hr />';
 
 sort($even);
-print_r($even);
-echo '<hr />';
-print_r($seperated);
+//print_r($even);
+//echo '<hr />';
+//print_r($seperated);
 $mean = array_sum($seperated) / count($seperated);
-echo $mean;
+//echo $mean;
 
 foreach($even as $bold){
     if ($bold > $mean) {
-        echo '<b>', $bold, '</b>';
+        //echo '<b>', $bold, '</b>';
         break;
     }
 }
 
-echo '<hr />';
+//echo '<hr />';
 $max = max($seperated);
-echo $max;
+//echo $max;
 
 
-echo '<hr />';
+//echo '<hr />';
 $size = ceil(sqrt($max+1));
 
-echo $size;
+//echo $size;
 
-echo '<hr />';
+//echo '<hr />';
 
 $n=0;
-echo "<table><tr></tr>";
+echo "<table>";
 for($i=0;$i<$size;$i++){
     echo "<tr>";
     for($j=0;$j<$size;$j++){
-            ++$n;
+        ++$n;
+        echo "<td>";
         if($map[$n] === 1){
             if($n==$bold){
-                echo "<td><b>", $bold,"</b></td>";
+                echo "<b>", $bold,"</b>";
             }
             else {
-                $checker = $n;
-                echo "<td>", $checker, "</td>";
+                echo $n;
             }
         }
-        else {
-            echo "<td>","</td>";
-        }
+        echo "</td>";
+
 
     }
-    echo "<tr>";
+    echo "</tr>";
 }
 echo "</table>";
+?>
+</body>
+</html>
