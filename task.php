@@ -50,8 +50,13 @@ for($i=0;$i<$size;$i++){
     for($j=0;$j<$size;$j++){
             ++$n;
         if($map[$n] === 1){
-            $checker=$n;
-            echo "<td>", $checker,"</td>";
+            if($n==$bold){
+                echo "<td><b>", $bold,"</b></td>";
+            }
+            else {
+                $checker = $n;
+                echo "<td>", $checker, "</td>";
+            }
         }
         else {
             echo "<td>","</td>";
