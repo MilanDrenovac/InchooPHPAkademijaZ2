@@ -47,6 +47,8 @@ $max = max($seperated);
 
 //echo '<hr />';
 $size = ceil(sqrt($max+1));
+//Technically this works better considering a if you input 4 it gives you a proper 2x2 table instead of 3x3 table?
+//$size = ceil(sqrt($max));
 
 //echo $size;
 
