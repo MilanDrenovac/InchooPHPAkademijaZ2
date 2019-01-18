@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="style.css">
 <?php
 
 //Seperating array into just numbers
@@ -25,3 +26,25 @@ foreach($even as $bold){
         break;
     }
 }
+
+echo '<hr />';
+$max = max($seperated);
+echo $max;
+
+
+echo '<hr />';
+$size = ceil(sqrt($max+1));
+
+echo $size;
+
+echo '<hr />';
+
+echo "<table><tr></tr>";
+for($i=0;$i<$size;$i++){
+    echo "<tr>";
+    for($j=0;$j<$size;$j++){
+        echo "<td>{$j}</td>";
+    }
+    echo "<tr>";
+}
+echo "</table>";
