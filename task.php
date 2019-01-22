@@ -14,9 +14,11 @@ $num = $_POST['numbers'];
 
 $seperated = explode (",", $num);
 //print_r($seperated);
-
+$seperated = array_map('intval', array_filter($seperated, function ($n) {
+    return $n !== '';
+}));
 foreach($seperated as $n){
-    if (!is_numeric($n)){
+    if (!is_numeric($n) || $n <=0){
         echo "<p>This is not a number, please input valid numbers<p>";
         exit();
     }
@@ -25,11 +27,13 @@ foreach($seperated as $n){
         $map[$n] = 1;
     }
 }
+
 //echo '<hr />';
 //print_r($map);
 //echo '<hr />';
 
 sort($even);
+
 //print_r($even);
 //echo '<hr />';
 //print_r($seperated);
@@ -87,7 +91,7 @@ for($i=0;$i<$size;$i++){
         ++$n;
         echo "<td>";
         if($map[$n] === 1){
-            if($n==$bold){
+            if($n===$bold){
                 echo "<b>", $bold,"</b>";
             }
             else {
